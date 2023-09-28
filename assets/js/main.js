@@ -162,6 +162,11 @@ const iconTheme = "uil-sun";
 const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
+if (!selectedTheme) {
+  document.body.classList.add(darkTheme);
+  themeButton.classList.add(iconTheme);
+}
+
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () =>
   document.body.classList.contains(darkTheme) ? "dark" : "light";
