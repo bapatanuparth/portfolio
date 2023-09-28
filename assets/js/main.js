@@ -188,3 +188,19 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+//Email service
+
+function sendEmail() {
+  console.log("clicked");
+  var params = {
+    from_name: document.getElementById("fullName").value,
+    email_id: document.getElementById("email_id").value,
+    message: document.getElementById("message").value,
+  };
+  emailjs
+    .send("service_xi63g9s", "template_m3i5ya5", params)
+    .then(function (res) {
+      alert("Thanks for contacting me. I will get back to you soon!");
+    });
+}
